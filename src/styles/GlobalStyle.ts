@@ -21,7 +21,7 @@ const GlobalStyles = createGlobalStyle`
 
   body {
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     display: grid;
     place-content: center;
     font-size: 1.6rem;

@@ -2,9 +2,10 @@ import styled from "styled-components";
 
 export const Container = styled.main`
   width: 80rem;
-  height: 80rem;
   padding: 6.4rem 8rem;
   border-radius: 1.6rem;
+  display: grid;
+  gap: 6.4rem;
   background-color: ${({ theme }) => theme.colors.foreground};
   box-shadow: ${({ theme }) => theme.shadows.primary};
 `;
@@ -24,12 +25,13 @@ export const Wrapper = styled.div`
 `;
 
 export const MoneyWrapper = styled.div`
-  display: flex;
-  outline: 1px solid ${({ theme }) => theme.colors.border};
+  min-width: 25rem;
+  outline: 0.1rem solid ${({ theme }) => theme.colors.border};
   border-radius: 0.8rem;
   position: relative;
+  &:hover,
   &:has(:focus) {
-    outline: 1px solid ${({ theme }) => theme.colors.focus};
+    outline: 0.25rem solid ${({ theme }) => theme.colors.focus};
   }
   &::before {
     content: attr(data-symbol);
@@ -42,13 +44,13 @@ export const MoneyWrapper = styled.div`
 `;
 
 export const InputMoney = styled.input`
-  padding: 1.6rem 1.6rem 1.6rem 4.6rem;
+  padding: 1.6rem 1.6rem 1.6rem 5.2rem;
+  width: 20rem;
+  outline: none;
   &::-webkit-inner-spin-button {
     display: none;
   }
 `;
-
-export const SelectMoney = styled.div``;
 
 export const ImgConverter = styled.img`
   cursor: pointer;
