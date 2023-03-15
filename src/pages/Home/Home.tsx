@@ -3,6 +3,7 @@ import { reducer, initialState } from "./Reducer";
 import Dropdown from "../../components/Dropdown";
 import HistoryChart from "../../components/HistoryChart";
 import { currencySymbol } from "../../types/currency";
+import converter from '/src/assets/converter.svg';
 import * as S from "./Home.styles";
 
 const currenciesSymbols: currencySymbol = {
@@ -56,7 +57,7 @@ const Home = () => {
             />
           </S.MoneyWrapper>
           <S.ImgConverter
-            src="src/assets/converter.svg"
+            src={converter}
             alt="Conversor de moedas"
           />
           <S.MoneyWrapper data-symbol={currenciesSymbols[state.to]}>
