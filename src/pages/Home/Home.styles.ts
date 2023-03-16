@@ -1,13 +1,21 @@
 import styled from "styled-components";
 
 export const Container = styled.main`
-  width: 80rem;
+  width: fit-content;
   padding: 6.4rem 8rem;
   border-radius: 1.6rem;
   display: grid;
   gap: 6.4rem;
   background-color: ${({ theme }) => theme.colors.foreground};
   box-shadow: ${({ theme }) => theme.shadows.primary};
+  @media (max-width: 768px) {
+    padding: 1.6rem;
+    gap: 3.2rem;
+  }
+  & img {
+    width: 2.4rem;
+    margin: 0 auto;
+  }
 `;
 
 export const Title  = styled.h2`
@@ -15,13 +23,20 @@ export const Title  = styled.h2`
   font-weight: 600;
   line-height: 2.4rem;
   color: ${({ theme }) => theme.colors.text};
+  @media (max-width: 768px) {
+    font-size: 1.6rem;
+  }
 `;
 
 export const Wrapper = styled.div`
   margin-top: 1.6rem;
   display: flex;
   justify-content: space-between;
-  gap: 1rem;
+  gap: 1.6rem;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
 `;
 
 export const MoneyWrapper = styled.div`
