@@ -1,7 +1,7 @@
 import Chart from 'react-apexcharts';
 import * as S from './HistoryChart.styles';
 
-const Graphic = () => {
+const HistoryChart = () => {
   const options = {
     series: [
       {
@@ -59,7 +59,10 @@ const Graphic = () => {
       min: 5,
       tickAmount: 4,
       labels: {
-        formatter: (value) => {
+        style: {
+          colors: "#0F172A",
+        },
+        formatter: (value:number) => {
           return value.toFixed(1).replace('.', ',')
         },
       },
@@ -103,8 +106,15 @@ const Graphic = () => {
   return (
     <S.Container>
       <Chart options={options} series={options.series} type={options.chart.type} height={options.chart.height} />
+      <S.ChartControls>
+        <S.Control>3D</S.Control>
+        <S.Control>7D</S.Control>
+        <S.Control className='active'>1M</S.Control>
+        <S.Control>5A</S.Control>
+        <S.Control>Max</S.Control>
+      </S.ChartControls>
     </S.Container>
   );
 }
 
-export default Graphic;
+export default HistoryChart;
