@@ -12,22 +12,23 @@ export function reducer(state: IHomeState, action: TReducerAction) {
   let newState: IHomeState = { ...state };
   switch (action.type) {
     case "SET_FROM":
-      newState = { ...state, from: action.payload }
+      newState = { ...state, from: action.payload };
       newState.toValue = newState.fromValue * newState.exchangeRate;
-      console.log(newState);
       return newState;
     case "SET_TO":
-      newState = { ...state, to: action.payload }
+      newState = { ...state, to: action.payload };
       newState.toValue = newState.fromValue * newState.exchangeRate;
       return newState;
     case "SET_FROM_VALUE":
-      newState = { ...state, fromValue: action.payload }
+      newState = { ...state, fromValue: action.payload };
       newState.toValue = newState.fromValue * newState.exchangeRate;
       return newState;
     case "SET_EXCHANGE_RATE":
-      newState = { ...state, exchangeRate: action.payload }
+      newState = { ...state, exchangeRate: action.payload };
       newState.toValue = newState.fromValue * newState.exchangeRate;
       return newState;
+    case "SWITCH_CURRENCIES":
+      return { ...state, from: state.to, to: state.from };
     default:
       console.log('Ação invalida!')
       return state;

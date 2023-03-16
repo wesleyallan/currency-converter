@@ -59,6 +59,7 @@ const Home = () => {
           <S.ImgConverter
             src={converter}
             alt="Conversor de moedas"
+            onClick={() => dispatch({ type: "SWITCH_CURRENCIES" })}
           />
           <S.MoneyWrapper data-symbol={currenciesSymbols[state.to]}>
             <S.InputMoney
