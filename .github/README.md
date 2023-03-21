@@ -60,8 +60,8 @@ Para instalar e executar o projeto é necessário as seguintes dependências.
 
 ```sh
 # Instalação
-git clone https://github.com/wesleyallan/carnaval-searcher.git
-cd carnaval-searcher
+git clone https://github.com/wesleyallan/currency-converter.git
+cd currency-converter
 npm install
 
 # Execução
